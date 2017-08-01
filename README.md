@@ -1,4 +1,3 @@
-@@ -1,2 +1,73 @@
 # Item Catalog Web App
 This web app is a project for the Udacity [Full Stack Web Developer Nanodegree Course](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004).
 
