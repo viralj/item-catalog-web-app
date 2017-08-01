@@ -1,30 +1,28 @@
+@@ -1,2 +1,73 @@
 # Item Catalog Web App
-This web app is a project for the Udacity [FSND Course](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004).
+This web app is a project for the Udacity [Full Stack Web Developer Nanodegree Course](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004).
 
 ## About
-This project is a RESTful web application utilizing the Flask framework which accesses a SQL database that populates categories and their items. OAuth2 provides authentication for further CRUD functionality on the application. Currently OAuth2 is implemented for Google Accounts.
+This project is RESTful Web application built with Flask framework written Python language. This project used Google's OAuth for login authentication. 
 
 ## In This Repo
-This project has one main Python module `app.py` which runs the Flask application. A SQL database is created using the `database_setup.py` module and you can populate the database with test data using `database_init.py`.
-The Flask application uses stored HTML templates in the tempaltes folder to build the front-end of the application. CSS/JS/Images are stored in the static directory.
+This project has one main Python module `app.py` which runs the Flask application. 
+The Flask application uses HTML templates stored in the templates folder to render the front-end of the application. 
+The static directory contains CSS/JS/Images folders and files.
 
-## Skills Honed
+## Used
 1. Python
 2. HTML
 3. CSS
 4. OAuth
 5. Flask Framework
 
-## Installation
-There are some dependancies and a few instructions on how to run the application.
-Seperate instructions are provided to get GConnect working also.
-
-## Dependencies
+## This application requires
 - [Vagrant](https://www.vagrantup.com/)
 - [Udacity Vagrantfile](https://github.com/udacity/fullstack-nanodegree-vm)
 - [VirtualBox](https://www.virtualbox.org/wiki/Downloads)
 
-## How to Install
+## How to Install and run
 1. Install Vagrant & VirtualBox
 2. Clone the Udacity Vagrantfile
 3. Go to Vagrant directory and either clone this repo or download and place zip here
@@ -35,7 +33,7 @@ Seperate instructions are provided to get GConnect working also.
 7. Setup application database `python /item-catalog/database_setup.py`
 8. *Insert fake data `python /item-catalog/database_init.py`
 9. Run application using `python /item-catalog/app.py`
-10. Access the application locally using http://localhost:5000
+10. Access the application locally using http://localhost:8900
 
 *Optional step(s)
 
@@ -45,11 +43,11 @@ To get the Google login working there are a few additional steps:
 1. Go to [Google Dev Console](https://console.developers.google.com)
 2. Sign up or Login if prompted
 3. Go to Credentials
-4. Select Create Crendentials > OAuth Client ID
+4. Select Create Credentials > OAuth Client ID
 5. Select Web application
 6. Enter name 'Item-Catalog'
-7. Authorized JavaScript origins = 'http://localhost:5000'
-8. Authorized redirect URIs = 'http://localhost:5000/login' && 'http://localhost:5000/gconnect'
+7. Authorized JavaScript origins = 'http://localhost:8900'
+8. Authorized redirect URIs = 'http://localhost:8900/login' && 'http://localhost:8900/gconnect'
 9. Select Create
 10. Copy the Client ID and paste it into the `data-clientid` in login.html
 11. On the Dev Console Select Download JSON
@@ -60,14 +58,14 @@ To get the Google login working there are a few additional steps:
 ## JSON Endpoints
 The following are open to the public:
 
-Catalog JSON: `/catalog/JSON`
+Catalog JSON: `/catalog.json`
     - Displays the whole catalog. Categories and all items.
 
-Categories JSON: `/catalog/categories/JSON`
+Categories JSON: `/catalog/categories.json`
     - Displays all categories
 
-Category Items JSON: `/catalog/<path:category_name>/items/JSON`
+Category Items JSON: `/catalog/<path:category_name>/items.json`
     - Displays items for a specific category
 
-Category Item JSON: `/catalog/<path:category_name>/<path:item_name>/JSON`
+Category Item JSON: `/catalog/<path:category_name>/<path:item_name>/json`
     - Displays a specific category item.
