@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock title %}
+
+{% block content %}
+    {% include "nav.html" %}
+
+    {% if 'username' not in session %}
+        <section id="login" class="section">
+            <div class="row">
+                <div class="container">
+                    <div class="col-lg-4">&nbsp;</div>
+                    <div class="col-sm-12 col-md-12 col-lg-4 text-center login-block">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4>Login using Google account</h4>
+                            </div>
+                        </div>
+
+                        <div class="row padding-top-20">
+
+                            <div id="signInButton">
+                                <span class="g-signin"
+                                      data-scope="openid email"
+                                      data-clientid="434180393792-ntt99msu6pqs83im118l3vq9a1a5qe4t.apps.googleusercontent.com"
+                                      data-redirecturi="postmessage"
+                                      data-accesstype="offline"
+                                      data-cookiepolicy="single_host_origin"
+                                      data-callback="signInCallback"
+                                      data-approvalprompt="force">
+                                </span>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <div class="col-lg-4">&nbsp;</div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="login-success" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 text-center">
+                        <div id="result"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% else %}
+    {% endif %}
+
+
+{% endblock %}
